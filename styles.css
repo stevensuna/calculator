@@ -1,0 +1,76 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    gap: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+    grid-column: 1 / -1;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+    min-height: 30px;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
+
+button {
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #999;
+}
+
+button[data-action="clear"] {
+    background-color: #ff4444;
+}
+
+button[data-action="equals"] {
+    background-color: #2196F3;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+button[data-operator] {
+    background-color: #FFA500;
+}
